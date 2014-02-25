@@ -27,13 +27,13 @@ void loop()
     Serial.write( 0x02 );
 
 
-// Envoi (ADCO 040022001488 4)  => N° d'identification du compteur : 040022001488
+// Envoi (ADCO 123456789123 4)  => N° d'identification du compteur : 123456789123
     Serial.write( 0x0A );
 	Serial.write( 0x41 ); Serial.write( 0x44 ); Serial.write( 0x43 ); Serial.write( 0x4F );
 	Serial.write( 0x20 );
-	Serial.print( "040022001488" );
+	Serial.print( "123456789123" );
 	Serial.write( 0x20 );
-	Serial.write( checksum( StringToChars("ADCO 040022001488\x20") ) );
+	Serial.write( checksum( StringToChars("ADCO 123456789123\x20") ) );
     Serial.write( 0x0D );
 
 // Envoi (OPTARIF BASE 0)       => Option tarifaire : BASE
